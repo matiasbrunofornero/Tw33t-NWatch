@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "headless": "nightwatch --headless",
-    "test": "nightwatch --default"
+    "appium": "appium",
+    "android": "nightwatch -c config/android.conf.js -e default",
+    "chrome": "nightwatch -c config/web.conf.js -e default",
+    "headless": "nightwatch -c config/web.conf.js -e headless"
   },
   "author": "",
   "license": "ISC",

@@ -1,11 +1,8 @@
 module.exports = {
     src_folders: ["src/tests/android"],
-    // page_objects_path: ["src/pages/android"],
 
     webdriver: {
         start_process: false,
-        // server_path: require('chromedriver').path,
-        // port: 9515
     },
 
     test_settings: {
