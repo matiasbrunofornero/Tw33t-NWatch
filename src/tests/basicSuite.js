@@ -3,7 +3,7 @@ var data = require('../data/data.json');
 const extraCommands = require('../commands/extraCommands');
 
 module.exports = {
-    // '@disabled': true,
+    '@disabled': true,
 
     beforeEach: function (nightwatch) {
         const landingPage = nightwatch.page.landingPage();
