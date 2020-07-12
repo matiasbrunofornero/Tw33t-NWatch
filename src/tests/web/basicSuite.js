@@ -1,9 +1,9 @@
-const tweets = require('../data/tweets.json');
-var data = require('../data/data.json');
-const extraCommands = require('../commands/extraCommands');
+const tweets = require('../../data/tweets.json');
+var data = require('../../data/data.json');
+const extraCommands = require('../../commands/extraCommands');
 
 module.exports = {
-    '@disabled': true,
+    '@disabled': false,
 
     beforeEach: function (nightwatch) {
         const landingPage = nightwatch.page.landingPage();

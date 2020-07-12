@@ -1,4 +1,4 @@
-var data = require('../data/data.json')
+var data = require('../../data/data.json')
 
 module.exports = {
     elements: {

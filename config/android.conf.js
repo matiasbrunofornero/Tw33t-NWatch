@@ -1,6 +1,6 @@
 module.exports = {
-    src_folders: ["src/tests"],
-    page_objects_path: ["src/pages"],
+    src_folders: ["src/tests/android"],
+    // page_objects_path: ["src/pages/android"],
 
     webdriver: {
         start_process: false,
@@ -10,23 +10,6 @@ module.exports = {
 
     test_settings: {
         default: {
-            desiredCapabilities: {
-                browserName: "chrome"
-            },
-            globals: {
-                waitForConditionTimeout: 5000
-            },
-        },
-        headless: {
-            desiredCapabilities: {
-                browserName: "chrome",
-                chromeOptions: {
-                    args: ['-headless'],
-                }
-            }
-        },
-        android: {
-            launch_url: "http://www.google.com/",
             selenium_port: 4723,
             selenium_host: "localhost",
             silent: true,
@@ -44,7 +27,6 @@ module.exports = {
                 avd: "Pixel_XL",
                 deviceReadyTimeout: 20,
                 autoGrantPermissions: true,
-                version: "",
                 javascriptEnabled: true,
                 acceptSslCerts: true
             }
