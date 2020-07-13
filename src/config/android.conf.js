@@ -1,5 +1,6 @@
 module.exports = {
     src_folders: ["src/tests/android"],
+    page_objects_path: ["src/pages/mobile/android"],
 
     webdriver: {
         start_process: false,
@@ -10,6 +11,7 @@ module.exports = {
             selenium_port: 4723,
             selenium_host: "localhost",
             silent: true,
+            use_xpath: true,
             desiredCapabilities: {
                 browserName: "",
                 platformName: "Android",
