@@ -4,6 +4,6 @@ node_modules
 pending_features
 screenshots
 tests_output
-chromedriver.log
 package-lock.json
 classes
+*.log
