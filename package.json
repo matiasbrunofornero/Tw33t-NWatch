@@ -6,6 +6,7 @@
   "scripts": {
     "appium": "appium",
     "android": "nightwatch -c src/config/android.conf.js -e default",
+    "ios": "nightwatch -c src/config/ios.conf.js -e default",
     "chrome": "nightwatch -c src/config/web.conf.js -e default",
     "headless": "nightwatch -c src/config/web.conf.js -e headless"
   },

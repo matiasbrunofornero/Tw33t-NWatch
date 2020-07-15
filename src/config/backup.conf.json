@@ -1,0 +1,123 @@
+{
+    "src_folders": [
+        "examples/tests"
+    ],
+    "output_folder": "examples/reports",
+    "custom_commands_path": "",
+    "custom_assertions_path": "",
+    "globals_path": "",
+    "selenium": {
+        "start_process": true,
+        "server_path": "PATH TO YOUR SELENIUM JAR",
+        "log_path": "",
+        "host": "127.0.0.1",
+        "port": 4444,
+        "cli_args": {
+            "webdriver.chrome.driver": "",
+            "webdriver.ie.driver": ""
+        }
+    },
+    "test_settings": {
+        "firefox": {
+            "launch_url": "http://localhost",
+            "selenium_port": 4444,
+            "selenium_host": "localhost",
+            "silent": true,
+            "screenshots": {
+                "enabled": false,
+                "path": ""
+            },
+            "desiredCapabilities": {
+                "browserName": "firefox",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true
+            }
+        },
+        "chrome": {
+            "launch_url": "http://localhost",
+            "selenium_port": 4444,
+            "selenium_host": "localhost",
+            "silent": true,
+            "screenshots": {
+                "enabled": false,
+                "path": ""
+            },
+            "desiredCapabilities": {
+                "browserName": "chrome",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true
+            }
+        },
+        "safari": {
+            "launch_url": "http://localhost",
+            "selenium_port": 4444,
+            "selenium_host": "localhost",
+            "silent": true,
+            "screenshots": {
+                "enabled": false,
+                "path": ""
+            },
+            "desiredCapabilities": {
+                "browserName": "safari",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true
+            }
+        },
+        "iphone": {
+            "launch_url": "http://127.0.0.1:4723/wd/hub",
+            "selenium_port": 4723,
+            "selenium_host": "localhost",
+            "silent": true,
+            "screenshots": {
+                "enabled": false,
+                "path": ""
+            },
+            "desiredCapabilities": {
+                "browserName": "iphone",
+                "platformName": "iOS",
+                "deviceName": "iPhone Simulator",
+                "version": "7.1",
+                "app": "PATH TO YOUR IPHONE EMULATOR APP",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true
+            }
+        },
+        "ipad": {
+            "launch_url": "http://127.0.0.1:4723/wd/hub",
+            "selenium_port": 4723,
+            "selenium_host": "localhost",
+            "silent": true,
+            "screenshots": {
+                "enabled": false,
+                "path": ""
+            },
+            "desiredCapabilities": {
+                "browserName": "ipad",
+                "platformName": "iOS",
+                "deviceName": "iPad Simulator",
+                "version": "7.1",
+                "app": "PATH TO YOUR IPAD EMULATOR APP",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true
+            }
+        },
+        "android": {
+            "launch_url": "http://localhost:8080/wd/hub",
+            "selenium_port": 8080,
+            "selenium_host": "localhost",
+            "silent": true,
+            "screenshots": {
+                "enabled": false,
+                "path": ""
+            },
+            "desiredCapabilities": {
+                "browserName": "android",
+                "platformName": "ANDROID",
+                "deviceName": "",
+                "version": "",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true
+            }
+        }
+    }
+}
