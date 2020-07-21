@@ -133,7 +133,61 @@ describe("Twitter-like API for Postman internship", function () {
             }
         });
 
-        console.log(JSON.parse(oRequestCreate.body))
+        expect(oRequestCreate.statusCode).toEqual(200);
+        oResponseCreate = JSON.parse(oRequestCreate.body);
+        expect(oResponseCreate.tweetId).toEqual(tweetId);
+
+        oRequestCreate = SyncRequest("GET", BaseURLApi + 'api/tweet/' + tweetId, {
+            headers: {
+                "Authorization": "Bearer " + sToken
+            }
+        });
+
+        expect(oRequestCreate.statusCode).toEqual(200);
+        oResponseCreate = JSON.parse(oRequestCreate.body);
+        expect(oResponseCreate.nLikes).toEqual(1);
+
+        oRequestCreate = SyncRequest("POST", BaseURLApi + 'api/tweet/' + tweetId + '/unlike', {
+            headers: {
+                "Authorization": "Bearer " + sToken
+            }
+        });
+
+        expect(oRequestCreate.statusCode).toEqual(200);
+
+        oRequestCreate = SyncRequest("GET", BaseURLApi + 'api/tweet/' + tweetId, {
+            headers: {
+                "Authorization": "Bearer " + sToken
+            }
+        });
+
+        expect(oRequestCreate.statusCode).toEqual(200);
+        oResponseCreate = JSON.parse(oRequestCreate.body);
+        expect(oResponseCreate.nLikes).toEqual(0);
+        expect(oResponseCreate.isReply).toBe(false);
+
+        const reply = "Hello, this is a reply!",
+        oRequestCreatee = SyncRequest("POST", BaseURLApi + 'api/tweet/' + tweetId + '/reply', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + sToken
+            },
+            body: JSON.stringify({ "text": reply }),
+        });
+
+        expect(oRequestCreatee.statusCode).toEqual(200);
+        expect(oResponseCreate.tweetId).toEqual(tweetId);
+
+        oRequestCreate = SyncRequest("GET", BaseURLApi + 'api/tweet/' + tweetId, {
+            headers: {
+                "Authorization": "Bearer " + sToken
+            }
+        });
+
+        expect(oRequestCreate.statusCode).toEqual(200);
+        oResponseCreate = JSON.parse(oRequestCreate.body);
+        expect(oResponseCreate.nLikes).toEqual(0);
+        expect(oResponseCreate.replies.length).toBeGreaterThan(0);
 
         oRequestCreate = SyncRequest("DELETE", BaseURLApi + 'api/tweet/' + tweetId, {
             headers: {
@@ -144,6 +198,5 @@ describe("Twitter-like API for Postman internship", function () {
         expect(oRequestCreate.statusCode).toEqual(200);
         oResponseCreate = JSON.parse(oRequestCreate.body);
         expect(oResponseCreate.message).toEqual('Successfully deleted!');
-
     })
 })
