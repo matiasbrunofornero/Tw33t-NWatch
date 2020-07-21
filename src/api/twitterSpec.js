@@ -15,6 +15,7 @@ describe("Twitter-like API for Postman internship", function () {
             json: sUser
         });
 
+        expect(oRequestCreate.statusCode).toEqual(200);
         let oResponseCreate = JSON.parse(oRequestCreate.body);
         let sAuth = oResponseCreate.auth;
         let sToken = oResponseCreate.token;
@@ -30,6 +31,7 @@ describe("Twitter-like API for Postman internship", function () {
             }
         });
 
+        expect(oRequestCreate.statusCode).toEqual(200);
         oResponseCreate = JSON.parse(oRequestCreate.body);
         sToken = oResponseCreate.token;
 
@@ -45,6 +47,7 @@ describe("Twitter-like API for Postman internship", function () {
             },
         })
 
+        expect(oRequestCreate.statusCode).toEqual(200);
         oResponseCreate = JSON.parse(oRequestCreate.body);
         const sName = oResponseCreate.name;
         const sUsername = oResponseCreate.username;
@@ -58,6 +61,7 @@ describe("Twitter-like API for Postman internship", function () {
             }
         })
 
+        expect(oRequestCreate.statusCode).toEqual(200);
         oResponseCreate = JSON.parse(oRequestCreate.body);
         sAuth = oResponseCreate.auth;
 
@@ -74,6 +78,7 @@ describe("Twitter-like API for Postman internship", function () {
             json: aUser
         });
 
+        expect(oRequestCreate.statusCode).toEqual(200);
         oResponseCreate = JSON.parse(oRequestCreate.body);
         const aAuth = oResponseCreate.auth;
         const aToken = oResponseCreate.token;
@@ -88,8 +93,8 @@ describe("Twitter-like API for Postman internship", function () {
             }
         });
 
+        expect(oRequestCreate.statusCode).toEqual(200);
         oResponseCreate = JSON.parse(oRequestCreate.body);
-
         expect(oResponseCreate.from).toEqual(aUserId);
         expect(oResponseCreate.to).toEqual(sUserId);
 
@@ -108,6 +113,7 @@ describe("Twitter-like API for Postman internship", function () {
             body: JSON.stringify({ "text": tweet }),
         });
 
+        expect(oRequestCreate.statusCode).toEqual(200);
         oResponseCreate = JSON.parse(oRequestCreate.body);
         const tweetId = oResponseCreate._id;
         expect(tweetId).toMatch(new RegExp("\.{24}"));
@@ -118,10 +124,7 @@ describe("Twitter-like API for Postman internship", function () {
             }
         });
 
-        // STATUS CODE EQUALS TO 200 (SUCCESSFULL!!)
-        // REPEAT IN ALL THE REQUESTS
         expect(oRequestCreate.statusCode).toEqual(200);
-
         oResponseCreate = JSON.parse(oRequestCreate.body);
         expect(oResponseCreate.nLikes).toEqual(0);
         expect(oResponseCreate.isReply).toBe(false);
@@ -176,7 +179,6 @@ describe("Twitter-like API for Postman internship", function () {
         });
 
         expect(oRequestCreatee.statusCode).toEqual(200);
-        expect(oResponseCreate.tweetId).toEqual(tweetId);
 
         oRequestCreate = SyncRequest("GET", BaseURLApi + 'api/tweet/' + tweetId, {
             headers: {
