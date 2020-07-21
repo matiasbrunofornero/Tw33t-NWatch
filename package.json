@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "appium": "appium",
+    "api": "jasmine src/api/twitterSpec.js",
     "android": "nightwatch -c src/config/android.conf.js -e default",
     "chrome": "nightwatch -c src/config/web.conf.js -e default",
     "headless": "nightwatch -c src/config/web.conf.js -e headless"
