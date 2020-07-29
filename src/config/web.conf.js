@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
     src_folders: ["src/tests/web"],
     page_objects_path: ["src/pages"],

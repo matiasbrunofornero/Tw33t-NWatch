@@ -6,6 +6,7 @@
   "scripts": {
     "appium": "appium",
     "android": "nightwatch -c src/config/android.conf.js -e default",
+    "browserstack": "nightwatch -c src/config/browserstack.conf.js -e firefox",
     "chrome": "nightwatch -c src/config/web.conf.js -e default",
     "headless": "nightwatch -c src/config/web.conf.js -e headless"
   },
@@ -14,6 +15,7 @@
   "dependencies": {
     "appium": "^1.17.1",
     "chromedriver": "^83.0.0",
+    "dotenv": "^8.2.0",
     "nightwatch": "^1.3.6"
   }
 }
