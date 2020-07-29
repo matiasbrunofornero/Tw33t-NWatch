@@ -1,4 +1,6 @@
 module.exports = {
+    url: 'https://www.twitter.com',
+    
     elements: {
         // imgLogo: '*[contains(@class, "android.widget.Image")]',
         loadingSpinner: '//*[@text="0.0"]',

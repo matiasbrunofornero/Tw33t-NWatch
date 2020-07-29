@@ -1,4 +1,4 @@
-const baseConfig = require('./web.conf');
+const baseConfig = require('./android.bs.conf');
 
 const config = {
     ...baseConfig,
@@ -12,12 +12,12 @@ const config = {
 config.test_settings.default.desiredCapabilities['browserstack.user'] = process.env.BROWSERSTACK_USER;
 config.test_settings.default.desiredCapabilities['browserstack.key'] = process.env.BROWSERSTACK_KEY;
 
-config.test_settings.firefox = {
+config.test_settings.android = {
     desiredCapabilities: {
-        os: 'Windows',
-        os_version: 'XP',
-        browserName: 'Firefox',
-        browser_version: '47.0',
+        real_mobile: true,
+        os_version: '7.0',
+        browserName: 'Android',
+        device: "Samsung Galaxy S8",
         ['browserstack.local']: false
     }
 }
