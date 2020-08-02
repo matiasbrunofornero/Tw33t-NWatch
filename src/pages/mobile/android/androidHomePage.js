@@ -1,17 +1,19 @@
 module.exports = {
     elements: {
-        directMessagesBtn: '//android.view.View[@text="Direct Messages"]'
+        directMessagesBtn: {
+            selector: '//android.view.View[@text="Direct Messages"]',
+            locateStrategy: 'xpath'
+        }
     },
 
     commands: [{
         clickHome() {
-            console.log('you has clicked Home');
             return this;
         },
 
-        clickMessages() {
-            console.log('you has clicked Messages');
-            return this.click(this.elements.messagesTabBtn);
+        clickMessages(nightwatch) {
+            this.click(this.elements.directMessagesBtn);
+            return nightwatch.page.androidMessagesPage();
         }
     }]
 };

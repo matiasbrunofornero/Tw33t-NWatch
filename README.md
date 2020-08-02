@@ -1,4 +1,4 @@
-# Tweet N Watch: Twitt3r End-2-End Automation Framework
+# Twitt3r End-2-End Automation Framework
 
 ## Project Description:
 * Project setup with Nightwatch version 1.3.6.

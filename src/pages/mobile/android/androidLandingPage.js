@@ -1,7 +1,9 @@
 module.exports = {
     elements: {
-        // imgLogo: '*[contains(@class, "android.widget.Image")]',
-        loadingSpinner: '//*[@text="0.0"]',
+        loadingSpinner: {
+            selector: '//*[@text="0.0"]',
+            locateStrategy: 'xpath'
+        },
         loginBtn: {
             selector: '//android.widget.Button[@text="Log in"]',
             locateStrategy: 'xpath'
@@ -10,15 +12,13 @@ module.exports = {
 
     commands: [{
         isTrendingsContentVisible() {
-            // return this.waitForElementNotPresent(this.elements.imgLogo)
-            this.useXpath();
-            return this.waitForElementNotPresent('//*[@text="0.0"]')
+            return this.waitForElementNotPresent(this.elements.loadingSpinner)
         },
 
         goToLoginPage(nightwatch) {
-            nightwatch.pause(10000);
-            this.waitForElementVisible('//android.widget.Button[@text="Log in"]', 10000);
-            this.click('//android.widget.Button[@text="Log in"]');
+            nightwatch.pause(3000);
+            this.waitForElementVisible(this.elements.loginBtn, 3000);
+            this.click(this.elements.loginBtn);
             return nightwatch.page.androidLoginPage();
         }
     }]
