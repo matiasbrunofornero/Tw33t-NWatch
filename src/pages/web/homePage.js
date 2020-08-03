@@ -1,6 +1,6 @@
-const tweets = require('../data/tweets.json');
-const sidebarCommands = require('../utils/sidebarCommands');
-const extraCommands = require('../commands/extraCommands');
+const tweets = require('../../data/tweets.json');
+const sidebarCommands = require('../../utils/sidebarCommands');
+const extraCommands = require('../../commands/extraCommands');
 
 module.exports = {
     elements: {

@@ -1,6 +1,6 @@
 module.exports = {
     src_folders: ["src/tests/android"],
-    page_objects_path: ["src/pages/mobile/android"],
+    page_objects_path: ["src/pages/android"],
 
     webdriver: {
         start_process: false,

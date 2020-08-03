@@ -1,4 +1,4 @@
-const extraCommands = require('../commands/extraCommands');
+const extraCommands = require('../../commands/extraCommands');
 
 module.exports = {
     elements: {
