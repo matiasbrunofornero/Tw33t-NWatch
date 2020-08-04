@@ -7,6 +7,7 @@
     "appium": "appium",
     "android": "nightwatch -c src/config/android.conf.js -e default",
     "chrome": "nightwatch -c src/config/web.conf.js -e default",
+    "ios": "nightwatch -c src/config/ios.conf.js -e default",
     "headless": "nightwatch -c src/config/web.conf.js -e headless"
   },
   "author": "",
@@ -14,6 +15,7 @@
   "dependencies": {
     "appium": "^1.17.1",
     "chromedriver": "^83.0.0",
-    "nightwatch": "^1.3.6"
+    "nightwatch": "^1.3.6",
+    "selenium-server-standalone-jar": "^3.141.59"
   }
 }

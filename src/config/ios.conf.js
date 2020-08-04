@@ -4,7 +4,7 @@ module.exports = {
 
     selenium: {
         start_process: true,
-        server_path: '/Users/matias/Documents/Tw33t-NWatch/src/data/selenium-server-standalone.jar',
+        server_path: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.141.59.jar",
         host: "127.0.0.1"
     },
 

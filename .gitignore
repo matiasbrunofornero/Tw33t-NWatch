@@ -7,3 +7,4 @@ tests_output
 chromedriver.log
 package-lock.json
 classes
+selenium-server.log
