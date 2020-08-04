@@ -15,10 +15,16 @@ module.exports = {
             selenium_host: "localhost",
             silent: true,
             desiredCapabilities: {
-                browserName: "Safari",
+                browserName: "",
+                bundleId: "com.apple.mobilesafari",
                 platformName: "iOS",
-                deviceName: "iPhone XR",
+                appiumVersion: "1.17.1",
+                chromedriverExecutable: "./data/chromedriver",
                 platformVersion: "13.1",
+                deviceName: "iPhone XR",
+                automationName: "XCUITest",
+                deviceReadyTimeout: 20,
+                autoGrantPermissions: true,
                 javascriptEnabled: true,
                 acceptSslCerts: true
             }
