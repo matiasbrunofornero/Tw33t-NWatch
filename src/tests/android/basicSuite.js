@@ -5,7 +5,7 @@ module.exports = {
     '@disabled': false,
 
     beforeEach: function (nightwatch) {
-        const landingPage = nightwatch.page.androidLandingPage();
+        const landingPage = nightwatch.page.landingPage();
         landingPage.isTrendingsContentVisible();
         const loginPage = landingPage.goToLoginPage(nightwatch);
         loginPage.loginAs(data.user, data.password, nightwatch);
@@ -16,16 +16,22 @@ module.exports = {
     },
 
     'Send a Direct Message': function (nightwatch) {
-        const homePage = nightwatch.page.androidHomePage();
+        const user = 'MatBF2';
+
+        const homePage = nightwatch.page.homePage();
         const messagesPage = homePage.clickMessages(nightwatch);
 
         const random = extraCommands.default.setRandom(100000);
         const msg = 'Automated Message #';
 
-        messagesPage.clickStartConversation();
-        messagesPage.searchUserToMessage('MatBF2');
+        messagesPage.clickNewMessage().isMessagePopupDisplayed();
+        messagesPage.searchUserToMessage(user);
 
-        messagesPage.setMessage(msg, random);
-        messagesPage.clickSend();
+        const conversationInfoPage = messagesPage.clickNext().clickInfo(nightwatch);
+        conversationInfoPage.isUserInfoDisplayed(user, nightwatch);
+
+        conversationInfoPage.clickBack(nightwatch)
+        messagesPage.setMessage(msg, random).clickSend();
+        messagesPage.isLatestMessageEqualsTo(msg + random);
     }
 }

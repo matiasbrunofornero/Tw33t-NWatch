@@ -12,14 +12,14 @@ module.exports = {
 
     commands: [{
         isTrendingsContentVisible() {
-            return this.waitForElementNotPresent(this.elements.loadingSpinner)
+            return this.waitForElementNotPresent(this.elements.loadingSpinner, 'Loading Spinner is not longer displayed')
         },
 
         goToLoginPage(nightwatch) {
             nightwatch.pause(3000);
             this.waitForElementVisible(this.elements.loginBtn, 3000);
             this.click(this.elements.loginBtn);
-            return nightwatch.page.androidLoginPage();
+            return nightwatch.page.loginPage();
         }
     }]
 };

@@ -13,7 +13,7 @@ module.exports = {
 
         clickMessages(nightwatch) {
             this.click(this.elements.directMessagesBtn);
-            return nightwatch.page.androidMessagesPage();
+            return nightwatch.page.messagesPage();
         }
     }]
 };

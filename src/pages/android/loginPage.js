@@ -27,7 +27,7 @@ module.exports = {
 
         clickLogin(nightwatch) {
             this.click(this.elements.loginBtn);
-            return nightwatch.page.androidHomePage();
+            return nightwatch.page.homePage();
         },
 
         loginAs(usr, pwd, nightwatch) {

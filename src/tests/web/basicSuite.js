@@ -50,6 +50,8 @@ module.exports = {
     },
 
     'Send a Direct Message functionality': function (nightwatch) {
+        const user = 'Matías Bruno F';
+
         const homePage = nightwatch.page.homePage();
         const messagesPage = homePage.clickMessages(nightwatch);
 
@@ -57,10 +59,10 @@ module.exports = {
         const msg = 'Automated Message #';
 
         messagesPage.clickNewMessage().isMessagePopupDisplayed();
-        messagesPage.searchUserToMessage('Matías Bruno F', 0, nightwatch);
+        messagesPage.searchUserToMessage(user, 0, nightwatch);
 
         const conversationInfoPage = messagesPage.clickNext().clickInfo(nightwatch);
-        conversationInfoPage.isUserInfoDisplayed('Matías Bruno F', nightwatch);
+        conversationInfoPage.isUserInfoDisplayed(user, nightwatch);
 
         conversationInfoPage.clickBack(nightwatch)
         messagesPage.setMessage(msg, random).clickSend();
